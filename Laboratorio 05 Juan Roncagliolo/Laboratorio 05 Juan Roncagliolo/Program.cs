@@ -14,7 +14,9 @@ namespace Laboratorio_05_Juan_Roncagliolo
             Server server = new Server(database);
             MailSender mailSender = new MailSender();
             SMSSender smsSender = new SMSSender();
-
+            User user = new User();
+            mailSender.EmailSent += user.OnEmailSent;
+            user.EmailVerified += server.OnEmailVerified;
 
             //Suscribir los que escuchan los eventos
             // Notar que para poder realizar las suscripciones es necesario tener instancias de las clases, y que los parametros

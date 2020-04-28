@@ -23,6 +23,10 @@ namespace Laboratorio_05_Juan_Roncagliolo
                 Registered(this, new RegisterEventArgs() { VerificationLink = verificationlink, Password = password, Username = username, Email = email });
             }
         }
+        public void OnEmailVerified(object source, EventArgs e)
+        {
+            Console.WriteLine("Email verificado correctamente.");
+        }
 
         // Paso 1: Creamos el delegate para el evento del cambio de contrasena
         public delegate void ChangePasswordEventHandler(object source, ChangePasswordEventArgs args);
